@@ -1,15 +1,17 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace __Game
 {
-	// Damageable
 	public class Health : MonoBehaviour
 	{
 		[SerializeField] UnityEvent _dying;
 		[SerializeField] UnityEvent _takingDamage;
 		[SerializeField] UnityEvent _healing;
 		[SerializeField] int _maxHealth;
+
+		public event Action Dying;
 		
 		int _value;
 
@@ -26,6 +28,7 @@ namespace __Game
 			{
 				// vfx, sfx
 				_dying.Invoke();
+				Dying?.Invoke();
 			}
 		}
 

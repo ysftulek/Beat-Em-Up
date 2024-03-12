@@ -11,14 +11,14 @@ namespace __Game.FSM
 		{
 			_targetFinder = Character.GetComponent<TargetFinder>();
 			_targetFinder.enabled = true;
-			Debug.Log("starting to chase");
-			Debug.Log("Target: " + _targetFinder.ChasingTarget);
+			Debugger.Log("starting to chase");
+			Debugger.Log("Target: " + _targetFinder.ChasingTarget);
 		}
 		
 		public override void Exit()
 		{
 			_targetFinder.enabled = false;
-			Debug.Log("exiting from chase");
+			Debugger.Log("exiting from chase");
 		}
 		
 		public override void Update()

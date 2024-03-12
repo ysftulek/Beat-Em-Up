@@ -11,12 +11,9 @@ namespace __Game.FSM
 
 		public override void Enter()
 		{
-			// Idle animasyonu oynat
 			_timer = 0f;
 			_wanderingInterval = Random.Range(2f, 3f);
-			Debug.Log("waiting for: " + _wanderingInterval);
-
-			// Character.GetComponent<AnimationManager>().PlayIdle();
+			Debugger.Log("waiting for: " + _wanderingInterval);
 		}
 
 		public override void Exit()
@@ -30,7 +27,7 @@ namespace __Game.FSM
 			if (_timer >= _wanderingInterval)
 			{
 				StateMachine.SetState(StateMachine.WanderingState);
-				Debug.Log("switching to wandering");
+				Debugger.Log("switching to wandering");
 			}
 		}
 	}

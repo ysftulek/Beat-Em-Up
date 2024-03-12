@@ -34,7 +34,7 @@ namespace __Game.FSM
 			if (targetVector.magnitude <= 0.1f)
 			{
 				StateMachine.SetState(StateMachine.IdleState);
-				Debug.Log("switching to idle");
+				Debugger.Log("switching to idle");
 			}
 
 			if (_targetFinder.TryGetChasingTarget())

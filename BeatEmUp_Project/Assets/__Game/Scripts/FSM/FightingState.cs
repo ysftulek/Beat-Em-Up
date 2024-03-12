@@ -11,7 +11,7 @@ namespace __Game.FSM
 		public override void Enter()
 		{
 			_targetFinder = Character.GetComponent<TargetFinder>();
-			Debug.Log("Switching to fighting state");
+			Debugger.Log("Switching to fighting state");
 		}
 		public override void Exit()
 		{
@@ -25,7 +25,7 @@ namespace __Game.FSM
 			{
 				if (_attackTimer >= 1f)
 				{
-					Debug.Log("attacking");
+					Debugger.Log("attacking");
 					_targetFinder.FightingTarget.GetComponent<Health>().TakeDamage(10);
 					_attackTimer -= 1f;
 				}

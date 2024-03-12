@@ -30,7 +30,6 @@ namespace __Game
 				_moveVector.x = 1f;
 			}
 			
-			
 			_moveVector.Normalize();
 			Vector3 result = new Vector3(_moveVector.x, _moveVector.y, 0f) * (_moveSpeed * Time.deltaTime);
 			transform.position += result;

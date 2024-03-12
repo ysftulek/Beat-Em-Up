@@ -26,7 +26,6 @@ namespace __Game
 			_takingDamage.Invoke();
 			if (_value <= 0)
 			{
-				// vfx, sfx
 				_dying.Invoke();
 				Dying?.Invoke();
 			}
@@ -35,7 +34,6 @@ namespace __Game
 		public void Heal(int amount)
 		{
 			_value = Mathf.Clamp(_value + amount, 0, _maxHealth);
-			// can artma vfx
 			_healing.Invoke();
 		}
 	}

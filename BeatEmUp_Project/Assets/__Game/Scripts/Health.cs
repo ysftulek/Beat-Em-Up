@@ -15,6 +15,8 @@ namespace __Game
 		
 		int _value;
 
+		public float HealthPercentage => (float)_value / _maxHealth;
+
 		void Awake()
 		{
 			_value = _maxHealth;

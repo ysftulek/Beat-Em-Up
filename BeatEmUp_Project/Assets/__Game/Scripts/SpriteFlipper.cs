@@ -12,7 +12,7 @@ namespace __Game
 			_lastPosition = transform.position;
 		}
 
-		void Update()
+		void FixedUpdate()
 		{
 			Vector3 deltaPos = transform.position - _lastPosition;
 			if (deltaPos.x > 0)

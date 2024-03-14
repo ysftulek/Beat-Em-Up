@@ -12,6 +12,7 @@ namespace __Game.FSM
 		public State WanderingState { get; private set; }
 		public State ChasingState { get; private set; }
 		public State FightingState { get; private set; }
+		public State DeathState { get; private set; }
 
 		void Awake()
 		{
@@ -19,6 +20,7 @@ namespace __Game.FSM
 			WanderingState = new WanderingState(this, _character);
 			ChasingState = new ChasingState(this, _character);
 			FightingState = new FightingState(this, _character);
+			DeathState = new DeathState(this, _character);
 
 			_currentState = IdleState;
 		}
@@ -33,6 +35,11 @@ namespace __Game.FSM
 			_currentState.Exit();
 			_currentState = state;
 			_currentState.Enter();
+		}
+
+		public void SetDeathState()
+		{
+			SetState(DeathState);
 		}
 	}
 }

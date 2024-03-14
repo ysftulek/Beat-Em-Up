@@ -26,7 +26,7 @@ namespace __Game.FSM
 				if (_attackTimer >= 1f)
 				{
 					Debugger.Log("attacking");
-					_targetFinder.FightingTarget.GetComponent<Health>().TakeDamage(10);
+					_targetFinder.FightingTarget.GetComponentInChildren<Health>().TakeDamage(10);
 					_attackTimer -= 1f;
 				}
 			}

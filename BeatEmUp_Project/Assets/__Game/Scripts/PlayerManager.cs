@@ -13,7 +13,6 @@ namespace __Game
 				if (instance == null)
 				{
 					instance = new PlayerManager();
-					Debug.Log("instance is null");
 				}
 				return instance;
 			}

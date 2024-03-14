@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 namespace __Game
 {
 	public class CharacterMover : MonoBehaviour
 	{
+		[SerializeField] Rigidbody2D _rigidbody2D;
 		[SerializeField] float _moveSpeed = 2f;
 		
 		Vector2 _moveVector;
@@ -29,10 +31,13 @@ namespace __Game
 			{
 				_moveVector.x = 1f;
 			}
-			
+		}
+
+		void FixedUpdate()
+		{
 			_moveVector.Normalize();
-			Vector3 result = new Vector3(_moveVector.x, _moveVector.y, 0f) * (_moveSpeed * Time.deltaTime);
-			transform.position += result;
+			Vector2 result = new Vector2(_moveVector.x, _moveVector.y) * (_moveSpeed * Time.deltaTime);
+			_rigidbody2D.MovePosition(_rigidbody2D.position + result);	
 		}
 	}
 }

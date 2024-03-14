@@ -14,6 +14,7 @@ namespace __Game
 			_health = PlayerManager.Instance.PlayerHealth;
 		}
 
+		// TODO: this can be changed with events for performance reasons
 		void Update()
 		{
 			_slider.value = _health.HealthPercentage;

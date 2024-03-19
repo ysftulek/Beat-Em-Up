@@ -21,9 +21,16 @@ namespace __Game
 		void Update()
 		{
 			Vector2 deltaPosition = (Vector2)transform.position - _lastPosition;
-			
-			_animator.SetFloat(Movement, deltaPosition.magnitude);
-
+			// 0.3532e-05 = 0.00003532
+			if (deltaPosition.x is < 0.001f and > -0.001f)
+			{
+				deltaPosition.x = 0f;
+			}
+			if (deltaPosition.y is < 0.001f and > -0.001f)
+			{
+				deltaPosition.y = 0f;
+			}
+			_animator.SetFloat(Movement, deltaPosition.magnitude * 100f);
 			_lastPosition = (Vector2)transform.position;
 		}
 

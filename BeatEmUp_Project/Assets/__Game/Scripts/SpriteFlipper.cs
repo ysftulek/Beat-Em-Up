@@ -12,14 +12,14 @@ namespace __Game
 			_lastPosition = transform.position;
 		}
 
-		void FixedUpdate()
+		void Update()
 		{
 			Vector3 deltaPos = transform.position - _lastPosition;
-			if (deltaPos.x > 0)
+			if (deltaPos.x > 0.00001f)
 			{
 				_spriteRenderer.flipX = true;
 			}
-			else if (deltaPos.x < 0)
+			else if (deltaPos.x < -0.00001f)
 			{
 				_spriteRenderer.flipX = false;
 			}

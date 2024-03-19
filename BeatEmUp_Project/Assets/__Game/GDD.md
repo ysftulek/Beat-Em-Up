@@ -37,3 +37,12 @@ TOPLANABİLİR NESNE YÖNETİCİSİ
 - Aktif olan TOPLANABİLİR NESNELERİ tut
 - Çoğaltma
 - Olasılık
+
+
+
+
+
+DÜŞMAN OLUŞTURMA
+Timeline oynuyorken kontrol bazen bizde, bazen oyunda olacak. Oyunda olduğunda ilerdeki düşmanları gösterebilir. Bizdeyken savaş sırasında yeni
+düşmanlar kapıdan, arabalardan çıkabilir.
+

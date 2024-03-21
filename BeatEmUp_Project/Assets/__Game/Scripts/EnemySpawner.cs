@@ -1,13 +1,13 @@
 using System;
 using UnityEngine;
-using UnityEngine.Playables;
 
 namespace __Game
 {
 	public class EnemySpawner : MonoBehaviour
 	{
 		[SerializeField] EnemySpawnConfig _enemySpawnConfig;
-		[SerializeField] PlayableDirector _playableDirector;
+
+		public event Action<GameObject[]> EnemiesSpawned;
 		
 		void OnEnable()
 		{
@@ -26,12 +26,13 @@ namespace __Game
 
 		void Spawn(int stage)
 		{
-			for (int i = 0; i < _enemySpawnConfig.EnemiesByStage[stage].Enemies.Length; i++)
+			GameObject[] enemies = _enemySpawnConfig.EnemiesByStage[stage].Enemies;
+			GameObject[] result = new GameObject[enemies.Length];
+			for (int i = 0; i < enemies.Length; i++)
 			{
-				GameObject instantiated = Instantiate(_enemySpawnConfig.EnemiesByStage[stage].Enemies[i]);
+				result[i] = Instantiate(enemies[i], transform);
 			}
-			//_playableDirector.SetGenericBinding();
+			EnemiesSpawned?.Invoke(result);
 		}
 	}
-
 }

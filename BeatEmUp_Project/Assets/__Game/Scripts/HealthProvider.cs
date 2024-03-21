@@ -10,11 +10,11 @@ namespace __Game
 		{
 			if (_healthAmount > 0)
 			{
-				player.GetComponent<Health>().Heal(_healthAmount);
+				player.GetComponentInChildren<Health>().Heal(_healthAmount);
 			}
 			else
 			{
-				player.GetComponent<Health>().TakeDamage(Mathf.Abs(_healthAmount));
+				player.GetComponentInChildren<Health>().TakeDamage(Mathf.Abs(_healthAmount));
 			}
 		}
 	}

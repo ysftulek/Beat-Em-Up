@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemiesByStage:
   - Enemies:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 5902392856052865691, guid: 95f4198b566d84bddb93c20276304a95, type: 3}
+    - {fileID: 5902392856052865691, guid: 95f4198b566d84bddb93c20276304a95, type: 3}
+    - {fileID: 5902392856052865691, guid: 95f4198b566d84bddb93c20276304a95, type: 3}
